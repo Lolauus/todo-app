@@ -1,9 +1,13 @@
-import './App.css';
-
+import "./Styling/App.css";
+import Header from "./layout/Header";
+import Footer from "./layout/Footer";
+import Main from "./layout/Main";
 function App() {
   return (
     <div className="App">
-        <p>hello world </p>
+      <Header />
+      <Main />
+      <Footer />
     </div>
   );
 }
