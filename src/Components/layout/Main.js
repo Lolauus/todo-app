@@ -1,9 +1,9 @@
-import ToDoitem from "../todos/ToDoItem";
+import ToDoList from "../todos/ToDoList";
 
 function Main() {
   return (
     <div>
-      <ToDoitem text="Hello" completed={false} important={true} />
+      <ToDoList text="Hello" completed={false} important={true} />
     </div>
   );
 }
