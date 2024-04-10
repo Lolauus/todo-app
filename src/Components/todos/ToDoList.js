@@ -1,15 +1,18 @@
+import { useState } from "react";
 import "../../Styling/ToDoList.css";
 
-function ToDoList({ tasks }) {
-  const test = tasks.map((n) => <li>{n.title}</li>);
+function ToDoList({ todos }) {
+  // const deleteTaskHandler = () => {
+  //   const newToDoList = remove.filter((a) => a.id !== a.id);
+
+  //   setRemove(newToDoList);
+  //   console.log(id);
+  // };
+  const toDosList = todos.map((todo) => <li key={todo.id}>{todo.title}</li>);
+
   return (
     <div>
-      <ul>
-        {/* {tasks.map((todo) => 
-          <li>{todo.title}</li>        
-        )} */}
-        <li>{test}</li>
-      </ul>
+      <ul>{toDosList}</ul>
     </div>
   );
 }
