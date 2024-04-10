@@ -1,14 +1,11 @@
 import "../../Styling/ToDoList.css";
-
 function ToDoList({ tasks }) {
-  const test = tasks.map((n) => <li>{n.title}</li>);
+const todoTasks = tasks.map((n) => <li>{n.title}</li>);
+  console.log(todoTasks)
   return (
-    <div>
+<div>
       <ul>
-        {/* {tasks.map((todo) => 
-          <li>{todo.title}</li>        
-        )} */}
-        <li>{test}</li>
+        {todoTasks}
       </ul>
     </div>
   );
