@@ -6,6 +6,7 @@ function App() {
     { id: 2, title: "runka" },
     { id: 3, title: "sova" },
   ];
+
   const [tasks, setTasks] = useState(initialList);
   const [newTodo, setNewTodo] = useState("");
 

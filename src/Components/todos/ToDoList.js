@@ -1,4 +1,3 @@
-import { useState } from "react";
 import "../../Styling/ToDoList.css";
 
 function ToDoList({ todos }) {
