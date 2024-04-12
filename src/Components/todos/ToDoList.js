@@ -1,7 +1,8 @@
 import "../../Styling/ToDoList.css";
-function ToDoList({ tasks }) {
-const todoTasks = tasks.map((n) => <li>{n.title}</li>);
-  console.log(todoTasks)
+function ToDoList({ todos }) {
+const todoTasks = todos.map((n, index) => <li key={index + 1 }>{n.title} <button>Delete</button></li>);
+
+
   return (
 <div>
       <ul>

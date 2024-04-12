@@ -1,5 +1,5 @@
 import ToDoList from "./Components/todos/ToDoList";
-import { useId, useState } from "react";
+import {useState } from "react";
 function App() {
   const initialList = [
     { id: 1, title: "städa" },
@@ -9,14 +9,16 @@ function App() {
 
   const [tasks, setTasks] = useState(initialList);
   const [newTodo, setNewTodo] = useState("");
+   var data = tasks.map((item, index) => ({ id: index + 1 ,...item }))
 
   const addTodo = () => {
     if (newTodo !== "") {
-      console.log(tasks);
-      setTasks([...tasks, { title: newTodo }]);
+      console.log(data)
+      setTasks([...tasks,{title: newTodo}]);
       setNewTodo("");
     }
   };
+  
   return (
     <div className="App">
       <ToDoList todos={tasks} />
