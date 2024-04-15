@@ -14,7 +14,6 @@ var idlist = tasks.length +1;
 
   const addTodo = () => {
     if (newTodo !== "") {
-      console.log(tasks)
       setTasks([...tasks,{id:idlist,title: newTodo}]);
       setNewTodo("");
     }
