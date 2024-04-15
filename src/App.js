@@ -14,7 +14,7 @@ function App() {
   const addTodo = () => {
     if (newTodo !== "") {
       console.log(data)
-      setTasks([...tasks,{title: newTodo}]);
+      setTasks([...data,{title: newTodo}]);
       setNewTodo("");
     }
   };
