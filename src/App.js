@@ -9,12 +9,13 @@ function App() {
 
   const [tasks, setTasks] = useState(initialList);
   const [newTodo, setNewTodo] = useState("");
-   var data = tasks.map((item, index) => ({ id: index + 1 ,...item }))
+
+var idlist = tasks.length +1;
 
   const addTodo = () => {
     if (newTodo !== "") {
-      console.log(data)
-      setTasks([...data,{title: newTodo}]);
+      console.log(tasks)
+      setTasks([...tasks,{id:idlist,title: newTodo}]);
       setNewTodo("");
     }
   };
