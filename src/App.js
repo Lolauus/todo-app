@@ -1,5 +1,5 @@
 import ToDoList from "./Components/todos/ToDoList";
-import {useState } from "react";
+import { useState } from "react";
 function App() {
   const initialList = [
     { id: 1, title: "städa" },
@@ -8,20 +8,32 @@ function App() {
   ];
 
   const [tasks, setTasks] = useState(initialList);
-  const [newTodo, setNewTodo] = useState("");
 
-var idlist = tasks.length +1;
+  const [newTodo, setNewTodo] = useState("");
 
   const addTodo = () => {
     if (newTodo !== "") {
-      setTasks([...tasks,{id:idlist,title: newTodo}]);
+      const taskWithHighestId = tasks.reduce(
+        (largest, current) => (current.id > largest.id ? current : largest),
+        tasks[0]
+      );
+
+      setTasks([...tasks, { id: taskWithHighestId.id + 1, title: newTodo }]);
       setNewTodo("");
     }
   };
-  
+
+  function removeTodo(id) {
+    var tasksAfterDelete = tasks.filter((task) => task.id !== id);
+    setTasks([...tasksAfterDelete]);
+  }
+  function removeAllTodo() {
+    setTasks([]);
+  }
+
   return (
     <div className="App">
-      <ToDoList todos={tasks} />
+      <ToDoList tasks={tasks} handleRemove={removeTodo} />
       <input
         placeholder="Whats up?"
         value={newTodo}
@@ -31,6 +43,11 @@ var idlist = tasks.length +1;
       <button type="button" onClick={addTodo}>
         Add
       </button>
+      <button type="button" onClick={removeAllTodo}>
+        Remove
+      </button>
+      <br />
+      <pre>{JSON.stringify(tasks, null, 2)}</pre>
     </div>
   );
 }

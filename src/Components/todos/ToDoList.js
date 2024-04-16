@@ -1,23 +1,15 @@
-import { useState } from "react";
 import "../../Styling/ToDoList.css";
-function ToDoList({ todos }) {
-  
-const todoTasks = todos.map((n) => <li key={n.id}>{n.title} <button onClick={handleRemove}>Delete</button></li>);
-const [remove, setRemove] = useState(todoTasks)
-console.log(todoTasks)
 
-function handleRemove(id) {
-  const newList = remove.filter((item) => item.id !== id);
-  console.log(newList)
-
-  setRemove(newList);
-}
+function ToDoList(props) {
+  const todoTasks = props.tasks.map((n) => (
+    <li key={n.id}>
+      {n.title} <button onClick={() => props.handleRemove(n.id)}>Delete</button>
+    </li>
+  ));
 
   return (
-<div>
-      <ul>
-        {test}
-      </ul>
+    <div>
+      <ul>{todoTasks}</ul>
     </div>
   );
 }
