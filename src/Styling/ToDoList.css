@@ -1,3 +1,6 @@
 .completed {
   text-decoration: line-through;
 }
+.notcomplete {
+  text-decoration: none;
+}

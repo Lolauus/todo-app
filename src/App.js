@@ -1,4 +1,5 @@
 import ToDoList from "./Components/todos/ToDoList";
+import "./Styling/App.css";
 import { useState } from "react";
 function App() {
   const initialList = [
