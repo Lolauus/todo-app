@@ -1,18 +1,12 @@
 import "../../Styling/ToDoList.css";
+import Todo from "./Todo";
 
-function ToDoList(props) {
-  const todoTasks = props.tasks.map((n) => (
-    <li name="notcomplete" key={n.id}>
-      {n.title} <button onClick={() => props.handleRemove(n.id)}>Delete</button>
-      <input type="checkbox" name="check"></input>
-    </li>
+export default function ToDoList({ tasks, handleRemove }) {
+  const todoTasks = tasks.map((n) => (
+    <ul key={n.id}>
+      <Todo todo={n.title} id={n.id} handleRemove={handleRemove} />
+    </ul>
   ));
 
-  return (
-    <div>
-      <ul>{todoTasks}</ul>
-    </div>
-  );
+  return <div>{todoTasks}</div>;
 }
-
-export default ToDoList;

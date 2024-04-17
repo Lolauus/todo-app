@@ -1,7 +1,7 @@
 import ToDoList from "./Components/todos/ToDoList";
 import "./Styling/App.css";
 import { useState } from "react";
-function App() {
+export default function App() {
   const initialList = [
     { id: 1, title: "städa" },
     { id: 2, title: "runka" },
@@ -28,9 +28,9 @@ function App() {
     var tasksAfterDelete = tasks.filter((task) => task.id !== id);
     setTasks([...tasksAfterDelete]);
   }
-  function removeAllTodo() {
+  const removeAllTodos = () => {
     setTasks([]);
-  }
+  };
 
   return (
     <div className="App">
@@ -44,13 +44,12 @@ function App() {
       <button type="button" onClick={addTodo}>
         Add
       </button>
-      <button type="button" onClick={removeAllTodo}>
+      <button type="button" onClick={removeAllTodos}>
         Remove
       </button>
+
       <br />
       <pre>{JSON.stringify(tasks, null, 2)}</pre>
     </div>
   );
 }
-
-export default App;
