@@ -1,4 +1,5 @@
 import ToDoList from "./Components/todos/ToDoList";
+import TodoInputField from "./Components/todos/TodoInputField";
 import "./Styling/App.css";
 import { useState } from "react";
 export default function App() {
@@ -9,8 +10,16 @@ export default function App() {
   ];
 
   const [tasks, setTasks] = useState(initialList);
-
   const [newTodo, setNewTodo] = useState("");
+
+  function onChangeHandler(e) {
+    setNewTodo(e.target.value);
+  }
+  const handleKeyPress = (e) => {
+    if (e.key === "Enter") {
+      addTodo();
+    }
+  };
 
   const addTodo = () => {
     if (newTodo !== "") {
@@ -35,11 +44,10 @@ export default function App() {
   return (
     <div className="App">
       <ToDoList tasks={tasks} handleRemove={removeTodo} />
-      <input
-        placeholder="Whats up?"
-        value={newTodo}
-        type="text"
-        onChange={(e) => setNewTodo(e.target.value)}
+      <TodoInputField
+        newTodo={newTodo}
+        handleOnChange={onChangeHandler}
+        onKeyDown={handleKeyPress}
       />
       <button type="button" onClick={addTodo}>
         Add
