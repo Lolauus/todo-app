@@ -4,9 +4,10 @@ import "./Styling/App.css";
 import { useState } from "react";
 export default function App() {
   const initialList = [
-    { id: 1, title: "städa" },
-    { id: 2, title: "runka" },
-    { id: 3, title: "sova" },
+    { id: 1, title: "Städa" },
+    { id: 2, title: "Dammsuga" },
+    { id: 3, title: "Tvätta" },
+    { id: 4, title: "Ringa samtal(viktigt)" },
   ];
 
   const [tasks, setTasks] = useState(initialList);
