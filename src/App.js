@@ -24,13 +24,17 @@ export default function App() {
 
   const addTodo = () => {
     if (newTodo !== "") {
-      const taskWithHighestId = tasks.reduce(
+      var taskWithHighestId = tasks.reduce(
         (largest, current) => (current.id > largest.id ? current : largest),
         tasks[0]
       );
+      if (taskWithHighestId === undefined) {
+        taskWithHighestId = { id: 1, title: newTodo };
+      }
 
       setTasks([...tasks, { id: taskWithHighestId.id + 1, title: newTodo }]);
       setNewTodo("");
+      console.log(tasks);
     }
   };
 
@@ -56,9 +60,6 @@ export default function App() {
       <button type="button" onClick={removeAllTodos}>
         Remove
       </button>
-
-      <br />
-      <pre>{JSON.stringify(tasks, null, 2)}</pre>
     </div>
   );
 }
