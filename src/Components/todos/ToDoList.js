@@ -8,5 +8,5 @@ export default function ToDoList({ tasks, handleRemove }) {
     </ul>
   ));
 
-  return <div>{todoTasks}</div>;
+  return <>{todoTasks}</>;
 }

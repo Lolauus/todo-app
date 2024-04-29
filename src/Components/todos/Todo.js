@@ -1,12 +1,13 @@
-import TodoEditText from "./TodoEditText";
-
+import "../../Styling/Todo.css";
 export default function Todo({ todo, id, handleRemove }) {
   return (
-    <div>
+    <>
       <li>
         {todo}
-        <button onClick={() => handleRemove(id)}>Delete</button>
+        <button className="list_remove_button" onClick={() => handleRemove(id)}>
+          Delete
+        </button>
       </li>
-    </div>
+    </>
   );
 }

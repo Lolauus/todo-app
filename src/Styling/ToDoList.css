@@ -1,6 +1,6 @@
-.completed {
-  text-decoration: line-through;
+.todolist-holder {
+  text-align: center;
 }
-.notcomplete {
-  text-decoration: none;
+.ul {
+  list-style-type: none;
 }
