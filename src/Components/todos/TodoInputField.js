@@ -10,7 +10,7 @@ export default function TodoInputField({ handleOnChange, onKeyDown, newTodo }) {
       value={newTodo}
       type="text"
       onChange={handleOnChange}
-      ref={InputRef}
+      ref={InputRef}  
       onKeyDown={onKeyDown}
     />
   );

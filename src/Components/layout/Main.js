@@ -53,7 +53,7 @@ export default function Main() {
       </div>
 
       <div className="input_holder">
-        <TodoInputField
+        <TodoInputField 
           newTodo={newTodo}
           handleOnChange={onChangeHandler}
           onKeyDown={handleKeyPress}
