@@ -17,3 +17,6 @@ ul {
   font-size: 100%;
   appearance: none;
 }
+.button-container {
+  width: 30%;
+}

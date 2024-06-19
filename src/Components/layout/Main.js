@@ -2,6 +2,7 @@ import "../../Styling/Main.css";
 import ToDoList from "../todos/ToDoList";
 import TodoInputField from "../todos/TodoInputField";
 import { useState } from "react";
+import Footer from "./Footer";
 export default function Main() {
   const initialList = [
     { id: 1, title: "Städa" },
@@ -60,13 +61,11 @@ export default function Main() {
         </div>
       </div>
       <div className="button-container">
-        {tasksLength}
-        <button type="button" onClick={addTodo}>
-          Add
-        </button>
-        <button type="button" onClick={removeAllTodos}>
-          Remove
-        </button>
+        <Footer
+          count={tasksLength}
+          addTodo={addTodo}
+          removeAllTodos={removeAllTodos}
+        />
       </div>
     </div>
   );

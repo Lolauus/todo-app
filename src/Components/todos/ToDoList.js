@@ -1,4 +1,3 @@
-import "../../Styling/ToDoList.css";
 import Todo from "./Todo";
 
 export default function ToDoList({ tasks, handleRemove }) {
