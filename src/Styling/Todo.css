@@ -1,3 +1,10 @@
 .list_remove_button {
   margin-left: 10px;
 }
+.list_objects {
+  /* box-shadow: 0 2px 4px 0 rgba(0, 0, 0, 0.2), 0 25px 50px 0 rgba(0, 0, 0, 0.1); */
+  border-bottom: 1px solid #ededed;
+  margin: 0px;
+  background-color: white;
+  padding: 15px 15px 15px 60px;
+}

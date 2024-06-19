@@ -1,3 +1,5 @@
+import "../../Styling/TodoInputField.css";
+
 import { useRef, useEffect } from "react";
 export default function TodoInputField({ handleOnChange, onKeyDown, newTodo }) {
   const InputRef = useRef();
@@ -6,11 +8,12 @@ export default function TodoInputField({ handleOnChange, onKeyDown, newTodo }) {
   });
   return (
     <input
+      className="input_textbox"
       placeholder="Whats up?"
       value={newTodo}
       type="text"
       onChange={handleOnChange}
-      ref={InputRef}  
+      ref={InputRef}
       onKeyDown={onKeyDown}
     />
   );

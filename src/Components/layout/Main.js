@@ -12,7 +12,7 @@ export default function Main() {
 
   const [tasks, setTasks] = useState(initialList);
   const [newTodo, setNewTodo] = useState("");
-
+  const tasksLength = tasks.length;
   function onChangeHandler(e) {
     setNewTodo(e.target.value);
   }
@@ -48,16 +48,19 @@ export default function Main() {
 
   return (
     <div className="App">
-      <div className="todolist_holder">
-        <ToDoList tasks={tasks} handleRemove={removeTodo} />
-      </div>
-
+      <h1>Todos</h1>
       <div className="input_holder">
-        <TodoInputField 
+        <TodoInputField
           newTodo={newTodo}
           handleOnChange={onChangeHandler}
           onKeyDown={handleKeyPress}
         />
+        <div className="todolist_holder">
+          <ToDoList tasks={tasks} handleRemove={removeTodo} />
+        </div>
+      </div>
+      <div className="button-container">
+        {tasksLength}
         <button type="button" onClick={addTodo}>
           Add
         </button>
